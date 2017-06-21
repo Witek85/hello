@@ -13,11 +13,21 @@ var y = 1;
   
   console.log(y);
 
+	// document.getElementById("js3").style.background = "yellow";
+	// document.getElementById("js3").style.border = "1px solid red";
 
-$.fn.makeRed = function() {
+
+$.fn.makeYellow = function() {
     this.css( "background", "yellow" );
     this.css( "border", "1px solid red" );
 };
+
+// To have it chained, you would need to add to the Element interface which all DOM nodes implement. If you go that way, you could do:
+Element.prototype.makeRed = function() {
+	this.style.background = "red";
+  this.style.border = "1px solid blue";
+}
+
 
 // this and self
 var myObject = {
@@ -44,9 +54,11 @@ var myObject = {
 document.getElementById("js1").innerHTML = y;
 myObject.func('js2');
 
+document.getElementById("js4").makeRed();
+
 $( document ).ready(function() {
 
 // easy jquery plugin
-$("#js3").makeRed();
+$("#js3").makeYellow();
 
 });
