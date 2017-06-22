@@ -52,7 +52,7 @@ var myObject = {
 
 // obiekty i konstruktory
 
-function Vehicle(name, type){
+function Vehicle(name, type, defaults){
   this.name=name;
   this.type=type;
   this.drive=function(elem){
@@ -67,7 +67,40 @@ merc = new Vehicle("Mercedes", "Kombi");
 audi.drive("js5");
 merc.drive("js5");
 
+// typy
 
+var bar1;
+var bar2 = null;
+var nan1 = 3 * "4";
+var nan2 = 3 * "nnn";
+var bar4 = [];
+var bar5 = function() {};
+console.log(typeof bar1 === "undefined"); 
+console.log(typeof bar2 === "object"); 
+console.log(nan1, typeof nan1, typeof nan1 === "number"); 
+console.log(nan2, typeof nan2, typeof nan2 === "number"); 
+console.log(typeof bar4,  typeof bar4 === "object"); 
+console.log(typeof bar5, typeof bar5 === "object"); 
+
+// to jest najlepsze
+// Numbers in JavaScript are all treated with floating point precision, 
+// and as such, may not always yield the expected results.”
+console.log(0.1);
+console.log(0.2);
+console.log(0.3 + 0.3);
+console.log(0.1 + 0.2);
+console.log(0.1 + 0.2 == 0.3);
+
+// function settimeout
+
+(function() {
+    console.log(1); 
+    setTimeout(function(){console.log(2)}, 1000); 
+    setTimeout(function(){console.log(3)}, 0); 
+    console.log(4);
+})();
+
+// Discuss possible ways to write a function isInteger(x) that determines if x is an integer.
 
 // ------------------------------------------
 
