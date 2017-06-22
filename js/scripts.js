@@ -28,7 +28,6 @@ Element.prototype.makeRed = function() {
   this.style.border = "1px solid blue";
 }
 
-
 // this and self
 var myObject = {
     foo: "bar",
@@ -50,6 +49,27 @@ var myObject = {
         funkcja2();
     }
 };
+
+// obiekty i konstruktory
+
+function Vehicle(name, type){
+  this.name=name;
+  this.type=type;
+  this.drive=function(elem){
+    console.log(this.name + " is driving...");
+    document.getElementById(elem).innerHTML += "<br/>" + this.name + " is driving...";
+  };
+}
+
+audi = new Vehicle("Audi", "Sedan");
+merc = new Vehicle("Mercedes", "Kombi");
+
+audi.drive("js5");
+merc.drive("js5");
+
+
+
+// ------------------------------------------
 
 document.getElementById("js1").innerHTML = y;
 myObject.func('js2');
