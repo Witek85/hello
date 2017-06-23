@@ -117,6 +117,29 @@ function helloSayer(first_name, last_name) {
 var JohnGreeter = helloSayer("John", "Smith");
 JohnGreeter();
 
+// closure 2
+
+function adder(x) {
+
+  var add = function(y) {
+    return x + y;
+  }
+
+  return add;
+}
+
+var addOne = adder(1);
+var addFive = adder(5);
+var addTen = adder(10);
+
+addOne(15);
+addFive(15);
+addTen(15);
+
+document.getElementById("js7").innerHTML += "<br/>" + addOne(15);
+document.getElementById("js7").innerHTML += "<br/>" + addFive(15);
+document.getElementById("js7").innerHTML += "<br/>" + addTen(15);
+
 // Discuss possible ways to write a function isInteger(x) that determines if x is an integer.
 
 // ------------------------------------------
