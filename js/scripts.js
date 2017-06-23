@@ -100,6 +100,23 @@ console.log(0.1 + 0.2 == 0.3);
     console.log(4);
 })();
 
+// closure 1
+
+function helloSayer(first_name, last_name) {
+
+  var message = "Hello " + first_name + " " + last_name;
+
+  var sayHello = function() {
+    // console.log(message);
+    document.getElementById("js6").innerHTML += "<br/>" + message;
+  }
+
+  return sayHello;
+}
+
+var JohnGreeter = helloSayer("John", "Smith");
+JohnGreeter();
+
 // Discuss possible ways to write a function isInteger(x) that determines if x is an integer.
 
 // ------------------------------------------
