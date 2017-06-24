@@ -4,3 +4,9 @@ body {
 .starter-template {
   padding: 3rem 1.5rem;
 }
+
+.box {
+	background: lightgrey;
+	border: 1px solid grey;
+	margin-bottom: 1rem;
+}
