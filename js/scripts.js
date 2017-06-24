@@ -142,6 +142,29 @@ document.getElementById("js7").innerHTML += "<br/>" + addOne(15);
 document.getElementById("js7").innerHTML += "<br/>" + addFive(16);
 document.getElementById("js7").innerHTML += "<br/>" + addTen(17);
 
+// modules
+
+function User() {
+  var username;
+  var password;
+
+  function doLogin(user, pw) {
+    username = user;
+    password = pw;
+
+    console.log("login: "+user+" "+pw);
+  }
+
+  var publicApi = {
+    login: doLogin
+  }
+
+  return publicApi;
+};
+
+var Fred = User();
+Fred.login("Fred", "fred1234");
+
 // Discuss possible ways to write a function isInteger(x) that determines if x is an integer.
 
 // ------------------------------------------
