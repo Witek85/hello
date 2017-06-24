@@ -165,6 +165,29 @@ function User() {
 var Fred = User();
 Fred.login("Fred", "fred1234");
 
+// this
+
+function thisFoo() {
+  console.log(this.bar);
+  document.getElementById("js8").innerHTML += "<br/>" + (this.bar);
+}
+
+var bar = "global";
+
+var thisObj1 = {
+  bar: "obj1",
+  thisFoo: thisFoo
+}
+
+var thisObj2 = {
+  bar: "obj2"
+}
+
+thisFoo(); //global
+thisObj1.thisFoo(); //obj1
+thisFoo.call(thisObj2); //obj2
+new thisFoo();
+
 // Discuss possible ways to write a function isInteger(x) that determines if x is an integer.
 
 // ------------------------------------------
