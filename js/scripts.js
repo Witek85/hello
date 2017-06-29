@@ -207,7 +207,26 @@ thisObj1.thisFoo(); //obj1
 thisFoo.call(thisObj2); //obj2
 new thisFoo();
 
-// Discuss possible ways to write a function isInteger(x) that determines if x is an integer.
+// napisz funkcję która zadziała w obydwu przypadkach
+// console.log(sum(2,3));   // Outputs 5
+// console.log(sum(2)(3));  // Outputs 5
+
+function suma1(x, y) {
+if(y !== undefined) {
+console.log("suma1(2,3) x " + x);
+console.log("suma1(2,3) y " + y);
+return x + y;
+} else {
+   return function(y) { 
+    console.log("suma1(2)(3) x " + x);
+    console.log("suma1(2)(3) y " + y);
+    return x + y; 
+  };
+}
+}
+
+document.getElementById("js10").innerHTML += "<br/>" + suma1(2, 3);
+document.getElementById("js10").innerHTML += "<br/>" + suma1(2)(3);
 
 // ------------------------------------------
 
