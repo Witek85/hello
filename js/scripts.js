@@ -85,11 +85,18 @@ console.log(typeof bar5, typeof bar5 === "object");
 // to jest najlepsze
 // Numbers in JavaScript are all treated with floating point precision, 
 // and as such, may not always yield the expected results.”
+
+var num1 = 0.1;
+var num2 = 0.2;
+
 console.log(0.1);
 console.log(0.2);
 console.log(0.3 + 0.3);
 console.log(0.1 + 0.2);
+console.log((0.1 + 0.2).toFixed(1));
+console.log(num1.toFixed(2) + num2.toFixed(2));
 console.log(0.1 + 0.2 == 0.3);
+console.log(0.1.toFixed(2) + 0.2.toFixed(2) == 0.3);
 
 // function settimeout
 
