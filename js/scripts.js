@@ -28,6 +28,16 @@ Element.prototype.makeRed = function() {
   this.style.border = "1px solid blue";
 }
 
+// checking is integer
+
+function isInteger(x) { 
+  return (typeof x === 'number') && (x % 1 === 0); 
+}
+
+document.querySelector("#js9").innerHTML += "<br/>" + 5 + " " + isInteger(5);
+document.querySelector("#js9").innerHTML += "<br/>" + "five" + " " + isInteger("five");
+document.querySelector("#js9").innerHTML += "<br/>" + null + " " + isInteger(null);
+
 // this and self
 var myObject = {
     foo: "bar",
