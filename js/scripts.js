@@ -37,6 +37,8 @@ function isInteger(x) {
 document.querySelector("#js9").innerHTML += "<br/>" + 5 + " " + isInteger(5);
 document.querySelector("#js9").innerHTML += "<br/>" + "five" + " " + isInteger("five");
 document.querySelector("#js9").innerHTML += "<br/>" + null + " " + isInteger(null);
+document.querySelector("#js9").innerHTML += "<br/>" + 5/null + " " + isInteger(null);
+document.querySelector("#js9").innerHTML += "<br/>" + 5/"string" + " " + isInteger(null);
 
 // this and self
 var myObject = {
