@@ -3,6 +3,19 @@ var test = "test123";
 var test1 = {};
 var test2 = [];
 
+// This is a function constructor:
+function Person(a, b) {
+    this.firstName = a;
+    this.lastName  = b;
+}
+
+// This creates a new object
+var Jan = new Person("Jan", "Kowalski");
+var Zenon = new Person("Zenon", "Nowak");
+
+document.querySelector("#js11").innerHTML += "<br/>" + Jan.firstName + ' ' + Jan.lastName;
+document.querySelector("#js11").innerHTML += "<br/>" + Zenon.firstName + ' ' + Zenon.lastName;
+
 
 console.log(test2 == true);
 
