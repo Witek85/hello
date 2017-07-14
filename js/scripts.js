@@ -241,6 +241,22 @@ return x + y;
 document.getElementById("js10").innerHTML += "<br/>" + suma1(2, 3);
 document.getElementById("js10").innerHTML += "<br/>" + suma1(2)(3);
 
+// eval
+
+function concatValues(a, b) {
+  eval(b);
+  return a + b;
+}
+function concatValuesStrict(a, b) {
+  "use strict"
+  eval(b);
+  return a + b;
+}
+var b = 3;
+
+document.getElementById("js12").innerHTML += "<br/>" + concatValues(1, 'var b = 2');
+document.getElementById("js12").innerHTML += "<br/>" + concatValuesStrict(1, 'var b = 2');
+
 // ------------------------------------------
 
 document.getElementById("js1").innerHTML = y;
