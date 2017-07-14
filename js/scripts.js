@@ -257,6 +257,16 @@ var b = 3;
 document.getElementById("js12").innerHTML += "<br/>" + concatValues(1, 'var b = 2');
 document.getElementById("js12").innerHTML += "<br/>" + concatValuesStrict(1, 'var b = 2');
 
+// is palindrome
+
+function isPalindrome(arg) {
+  arg = arg.toLowerCase();
+  return arg == arg.split('').reverse().join('');
+}
+
+console.log(isPalindrome('kajak'));
+console.log(isPalindrome('kajaki'));
+
 // ------------------------------------------
 
 document.getElementById("js1").innerHTML = y;
