@@ -267,6 +267,19 @@ function isPalindrome(arg) {
 console.log(isPalindrome('kajak'));
 console.log(isPalindrome('kajaki'));
 
+// closure settimeout
+
+for (var i = 0; i < 5; i++) {
+  setTimeout(function() { console.log('i', i); }, i * 1000 );
+}
+
+for (var i = 0; i < 5; i++) {
+  (function(x){
+    setTimeout(function() { console.log('x', x); }, i * 1000 );
+  })(i)
+
+}
+
 // ------------------------------------------
 
 document.getElementById("js1").innerHTML = y;
