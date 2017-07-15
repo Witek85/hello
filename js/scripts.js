@@ -323,6 +323,20 @@ function r_callback(arg) {
 
 Traverse(r_element, r_callback);
 
+function addClassEverywhere(s_element) {
+    s_element.className += " some-class";
+    var list = s_element.children;
+
+  for (var i = 0; i < list.length; i++) {
+    console.log(i);
+    addClassEverywhere(list[i]);
+    }
+}
+
+var t_element = document.getElementById("js15");
+
+addClassEverywhere(t_element);
+
 // ------------------------------------------
 
 document.getElementById("js1").innerHTML = y;
