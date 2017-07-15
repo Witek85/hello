@@ -296,6 +296,32 @@ for (var i = 0; i < 5; i++) {
 
 }
 
+// Depth-First-Search algorithm
+// Create a function that, given a DOM Element on the page, 
+// will visit the element itself and all of its descendents 
+// (not just its immediate children). 
+// For each element visited, the function should pass that element to a provided callback function.
+
+// The arguments to the function should be:
+// a DOM element
+// a callback function (that takes a DOM element as its argument)
+
+function Traverse(p_element, p_callback) {
+  p_callback(p_element);
+  var list = p_element.children;
+
+  for (var i = 0; i < list.length; i++) {
+      Traverse(list[i], p_callback); // recursive call  
+    }
+}
+
+var r_element = document.querySelector('.container');
+function r_callback(arg) {
+  console.log(arg);
+  document.getElementById("js14").innerText += arg;
+}
+
+Traverse(r_element, r_callback);
 
 // ------------------------------------------
 
