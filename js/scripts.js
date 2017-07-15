@@ -220,6 +220,22 @@ thisObj1.thisFoo(); //obj1
 thisFoo.call(thisObj2); //obj2
 new thisFoo();
 
+// private 
+
+var hero = {
+    _name: 'John Doe',
+    getSecretIdentity: function (){
+        return this._name;
+    }
+};
+
+var stoleSecretIdentity = hero.getSecretIdentity;
+var stoleSecretIdentityWorking = hero.getSecretIdentity.bind(hero);
+
+document.getElementById("js13").innerHTML += "<br/>" + stoleSecretIdentity();
+document.getElementById("js13").innerHTML += "<br/>" + stoleSecretIdentityWorking();
+document.getElementById("js13").innerHTML += "<br/>" + hero.getSecretIdentity();
+
 // napisz funkcję która zadziała w obydwu przypadkach
 // console.log(sum(2,3));   // Outputs 5
 // console.log(sum(2)(3));  // Outputs 5
@@ -279,6 +295,7 @@ for (var i = 0; i < 5; i++) {
   })(i)
 
 }
+
 
 // ------------------------------------------
 
