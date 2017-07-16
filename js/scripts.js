@@ -337,6 +337,22 @@ var t_element = document.getElementById("js15");
 
 addClassEverywhere(t_element);
 
+// closure 3 - multiply
+
+function multiply(x) {
+    return function (y) { // anonymous function 
+        return function (z) { // anonymous function 
+            return x * y * z; 
+        };
+    };
+}
+
+document.getElementById("js16").innerHTML += "<br/>" + multiply(2)(3)(2);
+document.getElementById("js16").innerHTML += "<br/>" + multiply(3)(4)(5);
+
+
+
+
 // ------------------------------------------
 
 document.getElementById("js1").innerHTML = y;
