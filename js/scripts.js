@@ -187,6 +187,29 @@ function multiply(x) {
 document.getElementById("js16").innerHTML += "<br/>" + multiply(2)(3)(2);
 document.getElementById("js16").innerHTML += "<br/>" + multiply(3)(4)(5);
 
+// closure 4
+
+var foo_global;
+
+function foo_external() {
+
+  var a = 2;
+
+  function foo_internal() {
+    document.getElementById("js17").innerHTML += "<br/>" + "foo_internal " + a
+  }
+
+  foo_global = foo_internal; // assign foo_internal to global variable
+
+}
+
+function foo_launch() {
+  foo_global(); // closure!
+}
+
+foo_external();
+foo_launch();
+
 
 // modules
 
