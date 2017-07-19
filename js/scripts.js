@@ -234,6 +234,70 @@ function User() {
 var Fred = User();
 Fred.login("Fred", "fred1234");
 
+// module 2
+
+function CoolModule() {
+  var something = "cool";
+  var another = [1, 2, 3];
+  function doSomething() {
+    console.log( something );
+    document.getElementById("js18").innerHTML += "<br/>" + something;
+
+  }
+  function doAnother() {
+    document.getElementById("js18").innerHTML += "<br/>" + another.join( " ! " ) ;
+  }
+  return {
+    doSomething: doSomething,
+    doAnother: doAnother
+  };
+}
+var fooMod = CoolModule();
+fooMod.doSomething(); // cool
+fooMod.doAnother(); // 1 ! 2 ! 3
+
+// module 3 
+
+var MyModules = (function Manager() {
+  var modules = {};
+  function define(name, deps, impl) {
+    for (var i=0; i<deps.length; i++) {
+      deps[i] = modules[deps[i]];
+    }
+    modules[name] = impl.apply( impl, deps );
+  }
+  function get(name) {
+    return modules[name];
+  }
+  return {
+    define: define,
+    get: get
+  };
+})();
+
+MyModules.define( "helloMaker", [], function(){
+  function hello(who) {
+    return "Let me introduce: " + who;
+  }
+  return {
+    hello: hello
+  };
+} );
+MyModules.define( "uppercaseMaker", ["helloMaker"], function(helloMaker){
+  var hungry = "hippo";
+  function awesome() {
+    console.log( helloMaker.hello( hungry ).toUpperCase() );
+    document.getElementById("js19").innerHTML += "<br/>" + helloMaker.hello( hungry ).toUpperCase();
+  }
+  return {
+    awesome: awesome
+  };
+} );
+var helloMakerGlobal = MyModules.get( "helloMaker" );
+var uppercaseMakerGlobal = MyModules.get( "uppercaseMaker" );
+document.getElementById("js19").innerHTML += "<br/>" + helloMakerGlobal.hello( "hippo" ); // Let me introduce: hippo
+uppercaseMakerGlobal.awesome(); // LET ME INTRODUCE: HIPPO
+
 // this
 
 function thisFoo() {
