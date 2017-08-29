@@ -13,7 +13,16 @@
           $("#add_status").click(function(){
             socket.emit('status added',$("#comment").val());
           });
+          socket.on('init feed',function(msg){
+            console.log('feed init!');
+            console.log(msg.length);
+            for(var i = 0; i < msg.length; i++) {
+              $("#show_comments").append(msg[i].s_text + '<br /><br />');
+            }
+
+          });
           socket.on('refresh feed',function(msg){
+            console.log('feed refreshed!');
             $("#show_comments").append(msg + '<br /><br />');
           });
     });
